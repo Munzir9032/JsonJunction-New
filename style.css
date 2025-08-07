@@ -1,0 +1,54 @@
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+    }
+    .ace_editor {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    .tree-view ul {
+        padding-left: 1.75rem;
+        border-left: 1px solid #e5e7eb;
+        margin-left: 0.25rem;
+    }
+    .tree-view li {
+        position: relative;
+    }
+    .tree-view .toggle {
+        cursor: pointer;
+        position: absolute;
+        left: -1.5rem;
+        top: 6px;
+        user-select: none;
+        transition: transform 0.1s ease;
+        color: #9ca3af;
+    }
+    .tree-view .toggle:hover {
+        color: #4b5563;
+    }
+    .tree-view .toggle.collapsed {
+        transform: rotate(-90deg);
+    }
+    .tree-view .value-string { color: #16a34a; }
+    .tree-view .value-number { color: #2563eb; }
+    .tree-view .value-boolean { color: #dc2626; }
+    .tree-view .value-null { color: #9333ea; }
+    .tree-view .key { color: #7c3aed; font-weight: 500;}
+    .tree-view .node-container:hover {
+            background-color: #f9fafb;
+            border-radius: 4px;
+    }
+
+    #splitter {
+        cursor: col-resize;
+        background-color: #e5e7eb;
+        width: 5px;
+        height: 100%;
+        transition: background-color 0.2s ease;
+        flex-shrink: 0; 
+        margin: 0 0.5rem; 
+    }
+    #splitter:hover {
+        background-color: #3b82f6;
+    }

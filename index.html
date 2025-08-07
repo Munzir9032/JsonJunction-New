@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md"
+        style="background-color: #45a049;">
+        <!-- Left side: Title -->
+        <h1 class="text-xl font-bold text-white">
+            JSON Junction
+        </h1>
+
+        <!-- Right side: Buttons and Status Indicator -->
+        <div class="flex items-center space-x-4">
+            <button id="format-btn"
+                class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="mr-2">
+                    <line x1="21" y1="10" x2="3" y2="10"></line>
+                    <line x1="21" y1="6" x2="3" y2="6"></line>
+                    <line x1="21" y1="14" x2="3" y2="14"></line>
+                    <line x1="21" y1="18" x2="3" y2="18"></line>
+                </svg>
+                Format
+            </button>
+            <button id="clear-btn"
+                class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="mr-2">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                Clear
+            </button>
+        </div>
+        <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Valid JSON">
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="flex h-[70vh] overflow-hidden p-4">
+        <!-- Left Pane: Editor -->
+        <div id="editor-container" class="h-full rounded-xl bg-white shadow-lg" style="flex-basis: 50%;">
+            <div id="editor"></div>
+        </div>
+
+        <!-- Splitter -->
+        <div id="splitter"></div>
+
+        <!-- Right Pane: Tree View -->
+        <div id="tree-view-wrapper" class="h-full flex-1 overflow-auto rounded-xl bg-white p-4 shadow-lg">
+            <div id="tree-view-container" class="tree-view text-gray-800">
+                <p class="text-gray-400">Tree view will appear here...</p>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- content for the website -->
+   <section class="bg-gray-50 px-6 py-8 font-sans text-gray-800 lg:px-12">
+        <div class="mx-auto max-w-8xl">
+            <h2 class="mb-4 text-center text-4xl font-extrabold text-green-700">Your Swiss Army Knife for JSON</h2>
+            <p class="mb-8 text-center text-lg text-gray-600">
+                Stop treating JSON like a cryptic puzzle. It's time to be the boss.
+            </p>
+
+            <div class="space-y-10">
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600">🎯 So, What’s the Big Deal?</h3>
+                    <p class="mt-2 text-gray-700">
+                        You've got a blob of JSON text. It could be a masterpiece or it could be a mess that's one character away from causing a digital apocalypse. Our tool doesn't just show you the code; it helps you understand it.
+                    </p>
+                    <ul class="mt-4 list-inside list-disc space-y-2">
+                        <li>✅ <strong class="text-gray-800">Instant Clarity:</strong> Paste your JSON on the left and see a beautiful, interactive tree on the right. No more guessing where one object ends and another begins.</li>
+                        <li>✅ <strong class="text-gray-800">One-Click Glow-Up:</strong> Hit the mighty <strong>Format</strong> button. Watch in awe as your tangled mess of code transforms into a perfectly indented, readable work of art.</li>
+                        <li>✅ <strong class="text-gray-800">Vanish into Thin Air:</strong> Click <strong>Clear</strong>, and your JSON is gone. Poof. Like your motivation on a Monday morning. Perfect for a clean slate.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600">🚨 Common JSON Sins You Can Finally Avoid</h3>
+                     <p class="mt-2 text-gray-700">We've all been there. Committing these JSON crimes should be punishable by having to use Internet Explorer 6 for a day. Our editor helps you spot them before they cause chaos.</p>
+                    <ul class="mt-4 list-inside list-disc space-y-2">
+                        <li><strong>The Trailing Comma of Doom:</strong> That extra comma after the last item in a list? It’s pure evil. Our validator will scream at you (in a helpful, red-dot kind of way).</li>
+                        <li><strong>The Quotation Mark Catastrophe:</strong> Using single quotes instead of double quotes? JSON is a stickler for rules. It wants double quotes, and only double quotes. Don't make it angry.</li>
+                        <li><strong>The Case of the Missing Bracket:</strong> Forgetting to close a curly brace `{}` or a square bracket `[]` is like leaving your front door wide open. Our tool helps you find the draft.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600">🧑‍💻 Who Is This For? (Spoiler: It's You)</h3>
+                    <p class="mt-2 text-gray-700">
+                        Whether you're a seasoned code wizard or just JSON-curious, this tool is your new best friend.
+                    </p>
+                     <ul class="mt-4 list-inside list-disc space-y-2">
+                        <li><strong>Developers:</strong> Stop debugging API responses with `console.log()` and start living. Paste the response here and see what's really going on.</li>
+                        <li><strong>QA Testers:</strong> Verify data structures between test runs without losing your will to live.</li>
+                        <li><strong>Students & Beginners:</strong> The best way to learn JSON is to play with it. Break it, fix it, format it. Go wild.</li>
+                        <li><strong>Anyone Who's Ever Said:</strong> "Why isn't this working?!" after copying JSON from a tutorial.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600">🧪 Your First Mission, Should You Choose to Accept It</h3>
+                    <p class="mt-2 text-gray-700">Copy the sample JSON below. Then, go ahead and break it. Remove a comma. Delete a quote. Watch the live validator catch your every mistake. It's like having a super-smart robot assistant who never asks for a raise.</p>
+                    <pre class="mt-2 overflow-x-auto rounded-md border border-gray-200 bg-white p-4 text-sm">
+<code>{
+  "name": "Munzir Nabeel",
+  "status": "Currently debugging the Matrix",
+  "skills": ["JSON juggling", "Bug whispering", "Code teleportation"],
+  "coffeeLevel": "Dangerously High ☕",
+  "funFact": "Can format JSON with a single, powerful glance."
+}</code></pre>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600">🚀 Ready to Restore Order to the Universe?</h3>
+                    <p class="mt-2 text-gray-700">
+                        Go on, paste your code. Click the buttons. Feel the power. Life's too short to manually format JSON. You've got more important things to do, like browsing memes or contemplating the void. Happy formatting! 🙃
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    
+</body>
+
+</html>
