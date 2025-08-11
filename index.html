@@ -5,15 +5,23 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-E2K6MHSB2X');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E2K6MHSB2X');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Editor</title>
+    <title>JSON Junction - Free JSON Formatter & Validator</title>
+    <meta name="description"
+        content="Free online JSON formatter, validator, and converter tools. Format, validate, and beautify your JSON instantly.">
+
+    <meta property="og:title" content="JSON Junction - Online JSON Tools">
+    <meta property="og:description" content="Free online JSON formatter, validator, and tools.">
+    <meta property="og:image" content="https://jsonjunction.tech/preview.jpg">
+    <meta property="og:url" content="https://jsonjunction.tech">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +37,7 @@
         style="background-color: #45a049;">
         <!-- Left side: Title -->
         <h1 class="text-xl font-bold text-white">
-            JSON Junction test
+            JSON Junction
         </h1>
 
         <!-- Right side: Buttons and Status Indicator -->
@@ -60,7 +68,7 @@
         <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Valid JSON">
         </div>
     </header>
-    
+
     <!-- Main Content -->
     <main class="flex h-[70vh] overflow-hidden p-4">
         <!-- Left Pane: Editor -->
@@ -81,7 +89,7 @@
 
 
     <!-- content for the website -->
-   <section class="bg-gray-50 px-6 py-8 font-sans text-gray-800 lg:px-12">
+    <section class="bg-gray-50 px-6 py-8 font-sans text-gray-800 lg:px-12">
         <div class="mx-auto max-w-8xl">
             <h2 class="mb-4 text-center text-4xl font-extrabold text-green-700">Your Swiss Army Knife for JSON</h2>
             <p class="mb-8 text-center text-lg text-gray-600">
@@ -92,22 +100,37 @@
                 <div>
                     <h3 class="text-2xl font-semibold text-green-600">🎯 So, What’s the Big Deal?</h3>
                     <p class="mt-2 text-gray-700">
-                        You've got a blob of JSON text. It could be a masterpiece or it could be a mess that's one character away from causing a digital apocalypse. Our tool doesn't just show you the code; it helps you understand it.
+                        You've got a blob of JSON text. It could be a masterpiece or it could be a mess that's one
+                        character away from causing a digital apocalypse. Our tool doesn't just show you the code; it
+                        helps you understand it.
                     </p>
                     <ul class="mt-4 list-inside list-disc space-y-2">
-                        <li>✅ <strong class="text-gray-800">Instant Clarity:</strong> Paste your JSON on the left and see a beautiful, interactive tree on the right. No more guessing where one object ends and another begins.</li>
-                        <li>✅ <strong class="text-gray-800">One-Click Glow-Up:</strong> Hit the mighty <strong>Format</strong> button. Watch in awe as your tangled mess of code transforms into a perfectly indented, readable work of art.</li>
-                        <li>✅ <strong class="text-gray-800">Vanish into Thin Air:</strong> Click <strong>Clear</strong>, and your JSON is gone. Poof. Like your motivation on a Monday morning. Perfect for a clean slate.</li>
+                        <li>✅ <strong class="text-gray-800">Instant Clarity:</strong> Paste your JSON on the left and
+                            see a beautiful, interactive tree on the right. No more guessing where one object ends and
+                            another begins.</li>
+                        <li>✅ <strong class="text-gray-800">One-Click Glow-Up:</strong> Hit the mighty
+                            <strong>Format</strong> button. Watch in awe as your tangled mess of code transforms into a
+                            perfectly indented, readable work of art.</li>
+                        <li>✅ <strong class="text-gray-800">Vanish into Thin Air:</strong> Click <strong>Clear</strong>,
+                            and your JSON is gone. Poof. Like your motivation on a Monday morning. Perfect for a clean
+                            slate.</li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="text-2xl font-semibold text-green-600">🚨 Common JSON Sins You Can Finally Avoid</h3>
-                     <p class="mt-2 text-gray-700">We've all been there. Committing these JSON crimes should be punishable by having to use Internet Explorer 6 for a day. Our editor helps you spot them before they cause chaos.</p>
+                    <p class="mt-2 text-gray-700">We've all been there. Committing these JSON crimes should be
+                        punishable by having to use Internet Explorer 6 for a day. Our editor helps you spot them before
+                        they cause chaos.</p>
                     <ul class="mt-4 list-inside list-disc space-y-2">
-                        <li><strong>The Trailing Comma of Doom:</strong> That extra comma after the last item in a list? It’s pure evil. Our validator will scream at you (in a helpful, red-dot kind of way).</li>
-                        <li><strong>The Quotation Mark Catastrophe:</strong> Using single quotes instead of double quotes? JSON is a stickler for rules. It wants double quotes, and only double quotes. Don't make it angry.</li>
-                        <li><strong>The Case of the Missing Bracket:</strong> Forgetting to close a curly brace `{}` or a square bracket `[]` is like leaving your front door wide open. Our tool helps you find the draft.</li>
+                        <li><strong>The Trailing Comma of Doom:</strong> That extra comma after the last item in a list?
+                            It’s pure evil. Our validator will scream at you (in a helpful, red-dot kind of way).</li>
+                        <li><strong>The Quotation Mark Catastrophe:</strong> Using single quotes instead of double
+                            quotes? JSON is a stickler for rules. It wants double quotes, and only double quotes. Don't
+                            make it angry.</li>
+                        <li><strong>The Case of the Missing Bracket:</strong> Forgetting to close a curly brace `{}` or
+                            a square bracket `[]` is like leaving your front door wide open. Our tool helps you find the
+                            draft.</li>
                     </ul>
                 </div>
 
@@ -116,17 +139,24 @@
                     <p class="mt-2 text-gray-700">
                         Whether you're a seasoned code wizard or just JSON-curious, this tool is your new best friend.
                     </p>
-                     <ul class="mt-4 list-inside list-disc space-y-2">
-                        <li><strong>Developers:</strong> Stop debugging API responses with `console.log()` and start living. Paste the response here and see what's really going on.</li>
-                        <li><strong>QA Testers:</strong> Verify data structures between test runs without losing your will to live.</li>
-                        <li><strong>Students & Beginners:</strong> The best way to learn JSON is to play with it. Break it, fix it, format it. Go wild.</li>
-                        <li><strong>Anyone Who's Ever Said:</strong> "Why isn't this working?!" after copying JSON from a tutorial.</li>
+                    <ul class="mt-4 list-inside list-disc space-y-2">
+                        <li><strong>Developers:</strong> Stop debugging API responses with `console.log()` and start
+                            living. Paste the response here and see what's really going on.</li>
+                        <li><strong>QA Testers:</strong> Verify data structures between test runs without losing your
+                            will to live.</li>
+                        <li><strong>Students & Beginners:</strong> The best way to learn JSON is to play with it. Break
+                            it, fix it, format it. Go wild.</li>
+                        <li><strong>Anyone Who's Ever Said:</strong> "Why isn't this working?!" after copying JSON from
+                            a tutorial.</li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-2xl font-semibold text-green-600">🧪 Your First Mission, Should You Choose to Accept It</h3>
-                    <p class="mt-2 text-gray-700">Copy the sample JSON below. Then, go ahead and break it. Remove a comma. Delete a quote. Watch the live validator catch your every mistake. It's like having a super-smart robot assistant who never asks for a raise.</p>
+                    <h3 class="text-2xl font-semibold text-green-600">🧪 Your First Mission, Should You Choose to Accept
+                        It</h3>
+                    <p class="mt-2 text-gray-700">Copy the sample JSON below. Then, go ahead and break it. Remove a
+                        comma. Delete a quote. Watch the live validator catch your every mistake. It's like having a
+                        super-smart robot assistant who never asks for a raise.</p>
                     <pre class="mt-2 overflow-x-auto rounded-md border border-gray-200 bg-white p-4 text-sm">
 <code>{
   "name": "Munzir Nabeel",
@@ -140,7 +170,9 @@
                 <div>
                     <h3 class="text-2xl font-semibold text-green-600">🚀 Ready to Restore Order to the Universe?</h3>
                     <p class="mt-2 text-gray-700">
-                        Go on, paste your code. Click the buttons. Feel the power. Life's too short to manually format JSON. You've got more important things to do, like browsing memes or contemplating the void. Happy formatting! 🙃
+                        Go on, paste your code. Click the buttons. Feel the power. Life's too short to manually format
+                        JSON. You've got more important things to do, like browsing memes or contemplating the void.
+                        Happy formatting! 🙃
                     </p>
                 </div>
             </div>
@@ -149,7 +181,7 @@
 
     <script src="script.js"></script>
 
-    
+
 </body>
 
 </html>
