@@ -5,18 +5,8 @@ const initialJson =  {
     "mood": "😎",
     "skills": ["JSON juggling", "Bug whispering", "Code teleportation"],
     "coffeeLevel": "High ☕",
-    "status": "Currently debugging the Matrix",
-    "projects": [
-        {
-            "title": "Save the World",
-            "completed": false
-        },
-        {
-            "title": "Fix One Semicolon",
-            "completed": true
-        }
-    ],
-    "funFact": "Can debug JSON with eyes closed."
+    "status": "Currently debugging the Matrix"
+
 };
 
 // --- Editor Setup ---
