@@ -2,19 +2,23 @@
         font-family: 'Inter', sans-serif;
         background-color: #f3f4f6;
     }
+
     .ace_editor {
         height: 100%;
         width: 100%;
         border-radius: 0.5rem;
     }
+
     .tree-view ul {
         padding-left: 1.75rem;
         border-left: 1px solid #e5e7eb;
         margin-left: 0.25rem;
     }
+
     .tree-view li {
         position: relative;
     }
+
     .tree-view .toggle {
         cursor: pointer;
         position: absolute;
@@ -24,20 +28,39 @@
         transition: transform 0.1s ease;
         color: #9ca3af;
     }
+
     .tree-view .toggle:hover {
         color: #4b5563;
     }
+
     .tree-view .toggle.collapsed {
         transform: rotate(-90deg);
     }
-    .tree-view .value-string { color: #16a34a; }
-    .tree-view .value-number { color: #2563eb; }
-    .tree-view .value-boolean { color: #dc2626; }
-    .tree-view .value-null { color: #9333ea; }
-    .tree-view .key { color: #7c3aed; font-weight: 500;}
+
+    .tree-view .value-string {
+        color: #16a34a;
+    }
+
+    .tree-view .value-number {
+        color: #2563eb;
+    }
+
+    .tree-view .value-boolean {
+        color: #dc2626;
+    }
+
+    .tree-view .value-null {
+        color: #9333ea;
+    }
+
+    .tree-view .key {
+        color: #7c3aed;
+        font-weight: 500;
+    }
+
     .tree-view .node-container:hover {
-            background-color: #f9fafb;
-            border-radius: 4px;
+        background-color: #f9fafb;
+        border-radius: 4px;
     }
 
     #splitter {
@@ -46,9 +69,66 @@
         width: 5px;
         height: 100%;
         transition: background-color 0.2s ease;
-        flex-shrink: 0; 
-        margin: 0 0.5rem; 
+        flex-shrink: 0;
+        margin: 0 0.5rem;
     }
+
     #splitter:hover {
         background-color: #3b82f6;
     }
+
+    .tree-view {
+        font-size: 14px;
+        /* Matches the editor's font size */
+        font-family: 'Inter', sans-serif;
+        /* You can match the editor's font family if you prefer */
+    }
+
+    .toggle.collapsed {
+        transform: rotate(-90deg);
+    }
+
+    .toggle.collapsed svg {
+        transform: rotate(-90deg);
+        transition: transform 0.2s ease;
+    }
+
+    .toggle svg {
+        transform: rotate(0deg);
+        transition: transform 0.2s ease;
+    }
+
+
+    .json-node {
+        line-height: 1.1;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font-family: monospace;
+        line-height: 1.15;
+        white-space: pre;
+    }
+
+    .json-header {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .json-toggle {
+        display: inline-block;
+        width: 1em;
+        margin-right: 4px;
+        transition: transform 0.2s ease;
+    }
+
+    .json-label {
+        color: #7A7A73;
+    }
+
+    .json-children {
+        margin-left: 0.5em;
+    }
+
+
+
+    
+    

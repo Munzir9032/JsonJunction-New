@@ -66,56 +66,118 @@ function createNode(key, value) {
     return node;
 }
 
-function createExpandableNode(key, data, type) {
-    const isArray = type === 'array';
-    const container = document.createElement('div');
-    const header = document.createElement('div');
-    header.className = 'flex items-center py-1';
 
-    const toggle = document.createElement('span');
-    toggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
-    toggle.className = 'toggle mr-2 text-xs';
+//old createExpandableNode function
+// function createExpandableNode(key, data, type) {
+//     const isArray = type === 'array';
+//     const container = document.createElement('div');
+//     const header = document.createElement('div');
+//     header.className = 'flex items-center py-1';
+
+//     const toggle = document.createElement('span');
+//     toggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+//     toggle.className = 'toggle mr-2 text-xs';
     
-    const keySpan = document.createElement('span');
-    if (key !== null) {
-        keySpan.textContent = `"${key}": `;
-        keySpan.className = 'key font-mono';
-        header.appendChild(keySpan);
-    }
+//     const keySpan = document.createElement('span');
+//     if (key !== null) {
+//         keySpan.textContent = `"${key}": `;
+//         keySpan.className = 'key font-mono';
+//         header.appendChild(keySpan);
+//     }
 
-    const typeSpan = document.createElement('span');
-    typeSpan.textContent = isArray ? `Array[${data.length}]` : `Object {${Object.keys(data).length}}`;
-    typeSpan.className = 'text-gray-500 font-mono text-sm';
-    header.appendChild(typeSpan);
+//     const typeSpan = document.createElement('span');
+//     typeSpan.textContent = isArray ? `Array[${data.length}]` : `Object {${Object.keys(data).length}}`;
+//     typeSpan.className = 'text-gray-500 font-mono text-sm';
+//     header.appendChild(typeSpan);
     
-    header.insertBefore(toggle, header.firstChild);
+//     header.insertBefore(toggle, header.firstChild);
 
-    const childContainer = document.createElement('ul');
+//     const childContainer = document.createElement('ul');
 
-    if (isArray) {
-        data.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.appendChild(createNode(index, item));
-            childContainer.appendChild(li);
-        });
-    } else {
-        Object.entries(data).forEach(([childKey, childValue]) => {
-            const li = document.createElement('li');
-            li.appendChild(createNode(childKey, childValue));
-            childContainer.appendChild(li);
-        });
-    }
+//     if (isArray) {
+//         data.forEach((item, index) => {
+//             const li = document.createElement('li');
+//             li.appendChild(createNode(index, item));
+//             childContainer.appendChild(li);
+//         });
+//     } else {
+//         Object.entries(data).forEach(([childKey, childValue]) => {
+//             const li = document.createElement('li');
+//             li.appendChild(createNode(childKey, childValue));
+//             childContainer.appendChild(li);
+//         });
+//     }
 
-    toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        childContainer.style.display = childContainer.style.display === 'none' ? 'block' : 'none';
-        toggle.classList.toggle('collapsed');
-    });
+//     toggle.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         childContainer.style.display = childContainer.style.display === 'none' ? 'block' : 'none';
+//         toggle.classList.toggle('collapsed');
+//     });
 
-    container.appendChild(header);
-    container.appendChild(childContainer);
-    return container;
+//     container.appendChild(header);
+//     container.appendChild(childContainer);
+//     return container;
+// }
+
+
+function createExpandableNode(key, value, depth = 0) {
+  const container = document.createElement('div');
+  container.className = 'json-node';
+
+  const header = document.createElement('div');
+  header.className = 'json-header';
+  header.style.paddingLeft = `${depth * 16}px`;
+
+  const toggle = document.createElement('span');
+  toggle.className = 'json-toggle';
+  toggle.textContent = '▶';
+
+  const label = document.createElement('span');
+  label.className = 'json-label';
+  const type = Array.isArray(value) ? 'array' : 'object';
+  const count = Array.isArray(value) ? value.length : Object.keys(value).length;
+  label.textContent = `${key ? `"${key}": ` : ''}${type} ${type === 'array' ? `[${count}]` : `{${count}}`}`;
+
+  header.appendChild(toggle);
+  header.appendChild(label);
+  container.appendChild(header);
+
+  const children = document.createElement('div');
+  children.className = 'json-children';
+  children.style.display = 'none';
+
+  const entries = Array.isArray(value) ? value.entries() : Object.entries(value);
+  for (const [childKey, childValue] of entries) {
+    const childNode = typeof childValue === 'object' && childValue !== null
+      ? createExpandableNode(childKey, childValue, depth + 1)
+      : createValueNode(childKey, childValue, depth + 1);
+    children.appendChild(childNode);
+  }
+
+  header.addEventListener('click', () => {
+    const expanded = children.style.display === 'block';
+    children.style.display = expanded ? 'none' : 'block';
+    toggle.textContent = expanded ? '▶' : '▼';
+  });
+
+  container.appendChild(children);
+  return container;
 }
+
+function createValueNode(key, value, depth = 0) {
+  const node = document.createElement('div');
+  node.className = 'json-node';
+  node.style.paddingLeft = `${depth * 16}px`;
+
+  const label = document.createElement('span');
+  label.className = 'json-label';
+  label.textContent = `"${key}": ${String(value)}`;
+
+  node.appendChild(label);
+  return node;
+}
+
+
 
 function createValueNode(key, value) {
     const node = document.createElement('div');
@@ -223,3 +285,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('format-btn').addEventListener('click', handleFormat);
     document.getElementById('clear-btn').addEventListener('click', handleClear);
 });
+
+
