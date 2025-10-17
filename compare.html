@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JSON Junction - JSON Diff Compare</title>
+  <meta name="description" content="Compare two JSON documents side-by-side and see differences.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-E2K6MHSB2X');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.36.2/ace.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="compareStyle.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md" style="background-color: #45a049;">
+    <h1 class="text-xl font-bold text-white">JSON Junction</h1>
+    
+    <div class="flex items-center space-x-3">
+    
+      <button id="compare-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md hover:bg-gray-100" aria-label="Compare JSON documents">
+        Compare
+      </button>
+
+      <button id="clear-left-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md hover:bg-gray-100" aria-label="Clear left JSON editor">
+        Clear Left
+      </button>
+
+      <button id="clear-right-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md hover:bg-gray-100" aria-label="Clear right JSON editor">
+        Clear Right
+      </button>
+
+      <button id="swap-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-700 shadow-md hover:bg-gray-100" aria-label="Swap left and right JSON editors">
+        Swap
+      </button>
+      <button>
+        <a href="index.html" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" aria-label="Go to JSON Formatter">
+          Formatter/Validate JSON
+        </a>
+    </button>
+    </div>
+
+    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Ready" aria-live="polite"></div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex h-[70vh] overflow-hidden p-4 gap-4">
+    <!-- Left editor -->
+    <div class="h-full flex flex-col rounded-xl bg-white shadow-lg" style="flex-basis: 45%;">
+      <div class="flex items-center justify-between border-b p-2">
+        <div class="text-sm font-medium text-gray-700">JSON A</div>
+      </div>
+      <div id="editor-left-error" class="text-sm text-red-600 p-2 hidden" aria-live="assertive"></div>
+      <div id="editor-left" class="h-full" aria-label="Left JSON editor"></div>
+    </div>
+
+    <!-- Center: Diff / Controls -->
+    <div class="flex flex-col gap-3" style="width: 220px; min-width:220px;">
+      <div class="rounded-xl bg-white p-3 shadow-lg h-1/3 flex items-center justify-center text-center">
+        <p class="text-sm text-gray-600">Compare two JSON documents to see additions, deletions, and changes.</p>
+      </div>
+      <div id="diff-summary" class="rounded-xl bg-white p-3 shadow-lg h-2/3 overflow-auto text-sm text-gray-700" aria-live="polite">
+        <p class="text-gray-400">Summary will appear here...</p>
+      </div>
+    </div>
+
+    <!-- Right editor -->
+    <div class="h-full flex flex-col rounded-xl bg-white shadow-lg" style="flex-basis: 45%;">
+      <div class="flex items-center justify-between border-b p-2">
+        <div class="text-sm font-medium text-gray-700">JSON B</div>
+      </div>
+      <div id="editor-right-error" class="text-sm text-red-600 p-2 hidden" aria-live="assertive"></div>
+      <div id="editor-right" class="h-full" aria-label="Right JSON editor"></div>
+    </div>
+  </main>
+
+  <!-- Result / Tree diff area -->
+  <section class="px-6 py-6">
+    <div class="mx-auto max-w-8xl">
+      <h2 class="mb-4 text-2xl font-extrabold text-green-700">Detailed Diff</h2>
+      <div id="diff-result" class="rounded-xl bg-white p-4 shadow-lg min-h-[200px] text-sm text-gray-800" aria-live="polite">
+        <p class="text-gray-400">Differences will be highlighted here after you click Compare.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="compareScript.js"></script>
+</body>
+</html>
