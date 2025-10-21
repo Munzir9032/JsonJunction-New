@@ -1,0 +1,21 @@
+/* --- Diff highlight styles for Ace editor lines --- */
+
+.ace_line_diff_added {
+  position: absolute !important;
+  background-color: rgba(16, 185, 129, 0.25) !important; /* green tint */
+}
+
+.ace_line_diff_removed {
+  position: absolute !important;
+  background-color: rgba(239, 68, 68, 0.25) !important; /* red tint */
+}
+
+.ace_line_diff_changed {
+  position: absolute !important;
+  background-color: rgba(234, 179, 8, 0.25) !important; /* yellow tint */
+}
+
+.ace_line_error {
+  position: absolute !important;
+  background-color: rgba(220, 38, 38, 0.3) !important; /* red tint for syntax errors */
+}

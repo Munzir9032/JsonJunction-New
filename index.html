@@ -3,158 +3,183 @@
 
 <head>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        gtag('config', 'G-E2K6MHSB2X');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Junction - Free JSON Formatter & Validator</title>
-    <meta name="description"
-        content="JSON Junction is a modern online JSON formatter and viewer for developers. Instantly format, validate, and view JSON with a sleek, easy-to-use interface. Perfect tools to explore and understand JSON data effortlessly.">
-
-
-    <meta property="og:title" content="JSON Junction - Online JSON Tools">
-    <meta property="og:description" content="Free online JSON formatter, validator, and tools.">
-    <meta property="og:image" content="https://jsonjunction.tech/preview.jpg">
-    <meta property="og:url" content="https://jsonjunction.tech">
-    <meta name="keywords"
-        content="schema json validator, schema validator json, validate json schema, validator json schema, json-schema-validator, json reader, json decoder, format json online, chatgpt free version, beautify json online, json beautify online, json online editor, json file viewer, json pretty online, json diff online, pretty json online, json schema validation, jsonschema validate, jsonparser, json verifier, viewer json, compare 2 jsons online, json text editor, json interpreter, free json editor, json free editor, json val, json format editor, json web editor, quick json editor, format json, formatter json, json formatter, json object formatter, json beautifier, json validator, validate json, validator json, json viewer, json view, json beautify, json parser, parser json, parse json, json to parser, json parsers, json online formatter, compare json, json compare, json formatter online, comparar json, comparing json, json editor, json online viewer, json view online, json viewer online, json read online, jsonview online, online json viewer, editor for json, editor json, diff json, json diff, json editor online, json online check, json online validator, json validator online, validate json online, json parse online, beautifier json, beautify json, compare json online, json compare online, online compare json, schema validator, openai chat gpt, json checker, json parser online, parse json online, json schema validator, json validator schema, json-schema validator">
+    gtag('config', 'G-E2K6MHSB2X');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Junction - Free JSON Formatter & Validator</title>
+  <meta name="description"
+    content="JSON Junction is a modern online JSON formatter and viewer for developers. Instantly format, validate, and view JSON with a sleek, easy-to-use interface. Perfect tools to explore and understand JSON data effortlessly.">
 
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!--     <link rel="icon" href="favicon.png"> -->
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="50x50">
+  <meta property="og:title" content="JSON Junction - Online JSON Tools">
+  <meta property="og:description" content="Free online JSON formatter, validator, and tools.">
+  <meta property="og:image" content="https://jsonjunction.tech/preview.jpg">
+  <meta property="og:url" content="https://jsonjunction.tech">
+  <meta name="keywords"
+    content="schema json validator, schema validator json, validate json schema, validator json schema, json-schema-validator, json reader, json decoder, format json online, chatgpt free version, beautify json online, json beautify online, json online editor, json file viewer, json pretty online, json diff online, pretty json online, json schema validation, jsonschema validate, jsonparser, json verifier, viewer json, compare 2 jsons online, json text editor, json interpreter, free json editor, json free editor, json val, json format editor, json web editor, quick json editor, format json, formatter json, json formatter, json object formatter, json beautifier, json validator, validate json, validator json, json viewer, json view, json beautify, json parser, parser json, parse json, json to parser, json parsers, json online formatter, compare json, json compare, json formatter online, comparar json, comparing json, json editor, json online viewer, json view online, json viewer online, json read online, jsonview online, online json viewer, editor for json, editor json, diff json, json diff, json editor online, json online check, json online validator, json validator online, validate json online, json parse online, beautifier json, beautify json, compare json online, json compare online, online compare json, schema validator, openai chat gpt, json checker, json parser online, parse json online, json schema validator, json validator schema, json-schema validator">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--     <link rel="icon" href="favicon.png"> -->
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="50x50">
 
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md"
-        style="background-color: #45a049;">
-        <!-- Left side: Title -->
-        <h1 class="text-xl font-bold text-white">
-            JSON Junction
-        </h1>
+  <!-- Header -->
+  <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md"
+    style="background-color: #45a049;">
+    <!-- Left side: Title -->
+    <h1 class="text-xl font-bold text-white">
+      JSON Junction
+    </h1>
 
 
 
-        <!-- Right side: Buttons and Status Indicator -->
-        <div class="flex items-center space-x-4">
-            <button id="format-btn"
-                class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    class="mr-2">
-                    <line x1="21" y1="10" x2="3" y2="10"></line>
-                    <line x1="21" y1="6" x2="3" y2="6"></line>
-                    <line x1="21" y1="14" x2="3" y2="14"></line>
-                    <line x1="21" y1="18" x2="3" y2="18"></line>
-                </svg>
-                Format
-            </button>
-            <button id="clear-btn"
-                class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                    class="mr-2">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                </svg>
-                Clear
-            </button>
-        </div>
-        <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Valid JSON">
-        </div>
-    </header>
+    <!-- Right side: Buttons and Status Indicator -->
+    <div class="flex items-center space-x-4">
+      <a href="compare.html"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        Compare Two Json
+      </a>
+      <button id="format-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <line x1="21" y1="10" x2="3" y2="10"></line>
+          <line x1="21" y1="6" x2="3" y2="6"></line>
+          <line x1="21" y1="14" x2="3" y2="14"></line>
+          <line x1="21" y1="18" x2="3" y2="18"></line>
+        </svg>
+        Format
+      </button>
+      <button id="clear-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+        Clear
+      </button>
+    </div>
+    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Valid JSON">
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main class="flex h-[70vh] overflow-hidden p-4">
-        <!-- Left Pane: Editor -->
-        <div id="editor-container" class="h-full rounded-xl bg-white shadow-lg" style="flex-basis: 50%;">
-            <div id="editor"></div>
-        </div>
+  <!-- Main Content -->
+  <main class="flex h-[70vh] overflow-hidden p-4">
+    <!-- Left Pane: Editor -->
+    <div id="editor-container" class="h-full rounded-xl bg-white shadow-lg" style="flex-basis: 50%;">
+      <div id="editor"></div>
+    </div>
 
-        <!-- Splitter -->
-        <div id="splitter"></div>
+    <!-- Splitter -->
+    <div id="splitter"></div>
 
-        <!-- Right Pane: Tree View -->
-        <div id="tree-view-wrapper" class="h-full flex-1 overflow-auto rounded-xl bg-white p-3 shadow-lg">
-            <div id="tree-view-container" class="tree-view text-gray-800">
-                <p class="text-gray-400">Tree view will appear here...</p>
-            </div>
-        </div>
-    </main>
-
-
-    <!-- content for the website -->
-    <section class="bg-gray-50 px-6 py-8 font-sans text-gray-800 lg:px-12">
-  <div class="mx-auto max-w-8xl">
-    <h2 class="mb-4 text-center text-4xl font-extrabold text-green-700">
-      The Ultimate JSON Formatter, Validator & Tree Viewer
-    </h2>
-    <p class="mb-8 text-center text-lg text-gray-600">
-      Stop treating JSON like a cryptic puzzle — use our tool to 
-      <strong>format JSON online</strong>, 
-      <strong>validate JSON</strong> (even with <strong>JSON Schema validation</strong>), 
-      and <strong>beautify JSON online</strong> in seconds.
-    </p>
-
-    <div class="space-y-10">
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">🎯 Why JSON Junction is a Big Deal</h3>
-        <p class="mt-2 text-gray-700">
-          Got a blob of JSON? It could be a masterpiece… or a ticking time bomb one missing bracket away from chaos.  
-          Our free <strong>JSON validator online</strong>, <strong>JSON beautifier</strong>, and interactive <strong>JSON reader</strong> doesn’t just show you code — it makes it readable, searchable, and lovable.
-        </p>
-        <ul class="mt-4 list-inside list-disc space-y-2">
-          <li>✅ <strong>Instant Clarity:</strong> Paste your JSON and instantly see a clean, interactive <strong>JSON tree viewer</strong>. Our <strong>JSON online viewer</strong> makes it easy to navigate through endless curly braces.</li>
-          <li>✅ <strong>One-Click Beautify:</strong> Hit <strong>Formatter JSON</strong> and watch your messy code transform into perfectly indented, human-friendly output with our <strong>JSON pretty online</strong> tool.</li>
-          <li>✅ <strong>Quick Reset:</strong> Click **Clear** and your JSON vanishes — perfect for starting fresh without clutter.</li>
-        </ul>
+    <!-- Right Pane: Tree View -->
+    <div id="tree-view-wrapper" class="h-full flex-1 overflow-auto rounded-xl bg-white p-3 shadow-lg">
+      <div id="tree-view-container" class="tree-view text-gray-800">
+        <p class="text-gray-400">Tree view will appear here...</p>
       </div>
+    </div>
+  </main>
 
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">🚨 JSON Mistakes You’ll Never Make Again</h3>
-        <p class="mt-2 text-gray-700">
-          We’ve all committed JSON crimes. Our live <strong>JSON parser online</strong> and <strong>JSON checker</strong> catches them before they break your app.
-        </p>
-        <ul class="mt-4 list-inside list-disc space-y-2">
-          <li><strong>The Trailing Comma:</strong> That sneaky extra comma? Gone. Our <strong>online JSON validator</strong> flags it instantly.</li>
-          <li><strong>Wrong Quotes:</strong> JSON demands double quotes. Our <strong>JSON verifier</strong> will let you know when you’ve gone rogue.</li>
-          <li><strong>Missing Brackets:</strong> Forget a brace or bracket? Our <strong>JSON parser</strong> will point it out before your code implodes.</li>
-        </ul>
-      </div>
 
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">🧑‍💻 Who Should Use This? (Spoiler: Everyone)</h3>
-        <p class="mt-2 text-gray-700">
-          Whether you’re a developer, tester, student, or just <strong>JSON-curious</strong> — this tool is your new best friend. It’s the ultimate <strong>online JSON editor</strong>, <strong>JSON text editor</strong>, and <strong>free JSON editor</strong>.
-        </p>
-        <ul class="mt-4 list-inside list-disc space-y-2">
-          <li><strong>Developers:</strong> Debug API responses with our <strong>JSON web editor</strong> and <strong>JSON schema validator</strong> instead of drowning in console logs.</li>
-          <li><strong>QA Testers:</strong> Verify <strong>JSON data</strong> structures between test runs using our <strong>JSON schema validation</strong> and <strong>JSON free editor</strong>.</li>
-          <li><strong>Students:</strong> Learn by breaking, fixing, and re-formatting JSON with our <strong>quick JSON editor</strong> and <strong>JSON decoder</strong>.</li>
-          <li><strong>Anyone:</strong> If you’ve ever yelled “Why isn’t this working?!” at JSON, you belong here. Our <strong>JSON online check</strong> makes errors obvious.</li>
-        </ul>
-      </div>
+  <!-- content for the website -->
+  <section class="bg-gray-50 px-6 py-8 font-sans text-gray-800 lg:px-12">
+    <div class="mx-auto max-w-8xl">
+      <h2 class="mb-4 text-center text-4xl font-extrabold text-green-700">
+        The Ultimate JSON Formatter, Validator & Tree Viewer
+      </h2>
+      <p class="mb-8 text-center text-lg text-gray-600">
+        Stop treating JSON like a cryptic puzzle — use our tool to
+        <strong>format JSON online</strong>,
+        <strong>validate JSON</strong> (even with <strong>JSON Schema validation</strong>),
+        and <strong>beautify JSON online</strong> in seconds.
+      </p>
 
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">🧪 Try It Now: Online JSON Validator</h3>
-        <p class="mt-2 text-gray-700">
-          Copy the sample JSON below, break it on purpose, and watch our <strong>JSONschema validate</strong> engine and <strong>json-schema-validator</strong> library catch every mistake.  
-          We even let you <strong>compare 2 JSONs online</strong> with our <strong>JSON diff online</strong> tool.
-        </p>
-        <pre class="mt-2 overflow-x-auto rounded-md border border-gray-200 bg-white p-4 text-sm">
+      <div class="space-y-10">
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">🎯 Why JSON Junction is a Big Deal</h3>
+          <p class="mt-2 text-gray-700">
+            Got a blob of JSON? It could be a masterpiece… or a ticking time bomb one missing bracket away from chaos.
+            Our free <strong>JSON validator online</strong>, <strong>JSON beautifier</strong>, and interactive
+            <strong>JSON reader</strong> doesn’t just show you code — it makes it readable, searchable, and lovable.
+          </p>
+          <ul class="mt-4 list-inside list-disc space-y-2">
+            <li>✅ <strong>Instant Clarity:</strong> Paste your JSON and instantly see a clean, interactive <strong>JSON
+                tree viewer</strong>. Our <strong>JSON online viewer</strong> makes it easy to navigate through endless
+              curly braces.</li>
+            <li>✅ <strong>One-Click Beautify:</strong> Hit <strong>Formatter JSON</strong> and watch your messy code
+              transform into perfectly indented, human-friendly output with our <strong>JSON pretty online</strong>
+              tool.</li>
+            <li>✅ <strong>Quick Reset:</strong> Click **Clear** and your JSON vanishes — perfect for starting fresh
+              without clutter.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">🚨 JSON Mistakes You’ll Never Make Again</h3>
+          <p class="mt-2 text-gray-700">
+            We’ve all committed JSON crimes. Our live <strong>JSON parser online</strong> and <strong>JSON
+              checker</strong> catches them before they break your app.
+          </p>
+          <ul class="mt-4 list-inside list-disc space-y-2">
+            <li><strong>The Trailing Comma:</strong> That sneaky extra comma? Gone. Our <strong>online JSON
+                validator</strong> flags it instantly.</li>
+            <li><strong>Wrong Quotes:</strong> JSON demands double quotes. Our <strong>JSON verifier</strong> will let
+              you know when you’ve gone rogue.</li>
+            <li><strong>Missing Brackets:</strong> Forget a brace or bracket? Our <strong>JSON parser</strong> will
+              point it out before your code implodes.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">🧑‍💻 Who Should Use This? (Spoiler: Everyone)</h3>
+          <p class="mt-2 text-gray-700">
+            Whether you’re a developer, tester, student, or just <strong>JSON-curious</strong> — this tool is your new
+            best friend. It’s the ultimate <strong>online JSON editor</strong>, <strong>JSON text editor</strong>, and
+            <strong>free JSON editor</strong>.
+          </p>
+          <ul class="mt-4 list-inside list-disc space-y-2">
+            <li><strong>Developers:</strong> Debug API responses with our <strong>JSON web editor</strong> and
+              <strong>JSON schema validator</strong> instead of drowning in console logs.</li>
+            <li><strong>QA Testers:</strong> Verify <strong>JSON data</strong> structures between test runs using our
+              <strong>JSON schema validation</strong> and <strong>JSON free editor</strong>.</li>
+            <li><strong>Students:</strong> Learn by breaking, fixing, and re-formatting JSON with our <strong>quick JSON
+                editor</strong> and <strong>JSON decoder</strong>.</li>
+            <li><strong>Anyone:</strong> If you’ve ever yelled “Why isn’t this working?!” at JSON, you belong here. Our
+              <strong>JSON online check</strong> makes errors obvious.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">🧪 Try It Now: Online JSON Validator</h3>
+          <p class="mt-2 text-gray-700">
+            Copy the sample JSON below, break it on purpose, and watch our <strong>JSONschema validate</strong> engine
+            and <strong>json-schema-validator</strong> library catch every mistake.
+            We even let you <strong>compare 2 JSONs online</strong> with our <strong>JSON diff online</strong> tool.
+          </p>
+          <pre class="mt-2 overflow-x-auto rounded-md border border-gray-200 bg-white p-4 text-sm">
 <code>{
 "name": "Munzir Nabeel",
 "status": "Currently debugging the Matrix",
@@ -162,32 +187,35 @@
 "coffeeLevel": "Dangerously High ☕",
 "funFact": "Can format JSON with a single, powerful glance."
 }</code></pre>
-      </div>
+        </div>
 
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">🚀 Format JSON Like a Pro</h3>
-        <p class="mt-2 text-gray-700">
-          Paste your JSON, click the buttons, and enjoy clean, validated code in seconds.  
-          With our <strong>JSON object formatter</strong>, <strong>JSON compare online</strong>, and <strong>JSON interpreter</strong>, you’ll never struggle again.  
-          Life’s too short for manual formatting — let JSON Junction do the heavy lifting.
-        </p>
-      </div>
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">🚀 Format JSON Like a Pro</h3>
+          <p class="mt-2 text-gray-700">
+            Paste your JSON, click the buttons, and enjoy clean, validated code in seconds.
+            With our <strong>JSON object formatter</strong>, <strong>JSON compare online</strong>, and <strong>JSON
+              interpreter</strong>, you’ll never struggle again.
+            Life’s too short for manual formatting — let JSON Junction do the heavy lifting.
+          </p>
+        </div>
 
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600">✨ Extra Perks</h3>
-        <p class="mt-2 text-gray-700">
-          - Need to <strong>compare JSON</strong> or run a <strong>diff JSON</strong>? We’ve got you covered.  
-          - Want to <strong>parse JSON online</strong> or use a <strong>JSON to parser</strong>? Done.  
-          - Looking for <strong>viewer JSON</strong> or <strong>JSON view online</strong>? Try our interactive <strong>online JSON viewer</strong>.  
-          - Curious about AI? Our tool even integrates smoothly if you’re using <strong>OpenAI Chat GPT</strong> or the <strong>ChatGPT free version</strong> to generate JSON.  
-        </p>
+        <div>
+          <h3 class="text-2xl font-semibold text-green-600">✨ Extra Perks</h3>
+          <p class="mt-2 text-gray-700">
+            - Need to <strong>compare JSON</strong> or run a <strong>diff JSON</strong>? We’ve got you covered.
+            - Want to <strong>parse JSON online</strong> or use a <strong>JSON to parser</strong>? Done.
+            - Looking for <strong>viewer JSON</strong> or <strong>JSON view online</strong>? Try our interactive
+            <strong>online JSON viewer</strong>.
+            - Curious about AI? Our tool even integrates smoothly if you’re using <strong>OpenAI Chat GPT</strong> or
+            the <strong>ChatGPT free version</strong> to generate JSON.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 
 </body>
