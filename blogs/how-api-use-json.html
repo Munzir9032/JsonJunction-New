@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How APIs Use JSON (with Real Examples) – JSON Junction</title>
+
+    <meta name="description" content="Learn how APIs use JSON to send and receive data between servers and clients, with simple real-world examples explained for beginners." />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <header class="bg-green-600 shadow p-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-white">JSON Junction</a>
+        <nav class="space-x-4">
+            <a href="/" class="font-medium text-gray-700 text-white">Home</a>
+            <a href="/compare.html" class="font-medium text-gray-700 text-white">Compare JSON</a>
+            <a href="/blog/index.html" class="font-medium text-gray-700 text-white">Blog</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded-xl shadow">
+
+        <h1 class="text-3xl font-bold mb-4 text-green-600">How APIs Use JSON (with Real Examples)</h1>
+
+        <p class="text-gray-500 mb-6">
+            Published on: <strong>January 2025</strong> • 
+            Category: <span class="text-green-600">APIs & JSON</span>
+        </p>
+
+        <hr class="my-6" />
+
+        <article class="prose prose-lg max-w-none">
+
+            <p>
+                Ever wondered how your favorite apps fetch live data like weather, stock prices, or user profiles in seconds? 
+                The answer lies in <strong>APIs</strong> — and almost all of them use <strong>JSON</strong> as the language to communicate between systems.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">What Is an API?</h2>
+
+            <p>
+                API stands for <strong>Application Programming Interface</strong>. 
+                It’s a bridge that allows two software systems to talk to each other. 
+                APIs send and receive requests — and most of the time, that data travels in <strong>JSON format</strong>.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">Why APIs Prefer JSON</h2>
+
+            <ul class="list-disc ml-6">
+                <li><strong>Lightweight:</strong> JSON data is compact and fast to transmit.</li>
+                <li><strong>Human-readable:</strong> Easy for developers to debug and understand.</li>
+                <li><strong>Language-independent:</strong> Works across JavaScript, Python, Java, C#, and more.</li>
+                <li><strong>Easy parsing:</strong> Most frameworks can automatically handle JSON input/output.</li>
+                <li><strong>Standardized:</strong> JSON has become the default format for REST APIs.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">Example: JSON in an API Response</h2>
+
+            <p>Here’s a simple example of an API returning user information in JSON format:</p>
+
+<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+    "id": 101,
+    "name": "Munzir",
+    "email": "munzir@example.com",
+    "active": true
+}</pre>
+
+            <p>
+                This JSON response might come from an endpoint like:
+                <code>https://api.example.com/users/101</code>.
+                When your app calls this endpoint, it receives this data in JSON form.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">How JSON Is Used in API Requests</h2>
+
+            <p>
+                JSON isn’t just for receiving data — you also use it to <strong>send data</strong> when making API requests.
+                Here’s an example of a POST request that sends JSON:
+            </p>
+
+<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">POST https://api.example.com/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "active": true
+}</pre>
+
+            <p>
+                The server reads this JSON payload and creates a new user. 
+                This is how modern apps interact with databases through APIs — no direct SQL or XML needed.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">Common Places You’ll See JSON in APIs</h2>
+
+            <ul class="list-disc ml-6">
+                <li><strong>Weather APIs:</strong> Return temperature, humidity, and forecasts in JSON.</li>
+                <li><strong>Social Media APIs:</strong> Send JSON with user posts, likes, and comments.</li>
+                <li><strong>E-commerce APIs:</strong> Products, prices, and inventory all use JSON.</li>
+                <li><strong>Finance APIs:</strong> Currency rates and transactions are shared in JSON format.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">Example: A Real API Workflow</h2>
+
+            <p>Let’s look at a practical example step by step:</p>
+
+            <ol class="list-decimal ml-6">
+                <li>Your app sends a <strong>GET</strong> request to an API endpoint.</li>
+                <li>The API responds with <strong>JSON data</strong>.</li>
+                <li>Your app parses that JSON and displays it to the user.</li>
+            </ol>
+
+            <p>
+                For example, calling the <code>https://api.weather.com/current</code> endpoint could return:
+            </p>
+
+<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+    "city": "Delhi",
+    "temperature": 29,
+    "unit": "C",
+    "condition": "Sunny"
+}</pre>
+
+            <p>
+                Your frontend app then uses this JSON data to show:  
+                <em>“It’s 29°C and sunny in Delhi.”</em>
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
+
+            <p>
+                JSON is the foundation of modern API communication. 
+                It makes data exchange fast, simple, and consistent between servers, browsers, and apps.
+                Whether you’re building your first REST API or integrating third-party services,
+                understanding JSON will make your workflow smoother and more powerful.
+            </p>
+
+            <p>
+                You can explore tools like JSON Junction’s <a href="/" class="text-green-600">Formatter</a> and
+                <a href="/compare.html" class="text-green-600">Comparator</a> to debug, format, and analyze your JSON data easily.
+            </p>
+
+        </article>
+
+        <hr class="my-8" />
+
+        <a href="/blog.html" class="text-green-600 font-semibold">← Back to Blog</a>
+
+    </main>
+
+    <footer class="text-center p-4 mt-8 text-gray-600">
+        © 2025 JSON Junction. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
