@@ -46,15 +46,41 @@
   <!-- Header -->
   <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md"
     style="background-color: #45a049;">
+
     <!-- Left side: Title -->
     <h1 class="text-xl font-bold text-white">
       JSON Junction
     </h1>
 
-
-
-    <!-- Right side: Buttons and Status Indicator -->
+    <!-- Right side -->
     <div class="flex items-center space-x-4">
+
+      <!-- Tools Dropdown -->
+      <div class="relative">
+        <button id="toolsDropdownBtn"
+          class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-700 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500">
+          Tools
+          <svg class="ml-2 h-4 w-4 transition-transform" id="toolsArrow" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="toolsDropdownMenu"
+          class="hidden absolute right-0 mt-2 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+
+          <a href="compare.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Compare Two JSON 
+          </a>
+
+          <a href="tools/Json_to_csv/json-to-csv.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            JSON to CSV 
+          </a>
+
+        </div>
+      </div>
+
       <a id="format-btn" href="blog.html"
         class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -69,18 +95,9 @@
         Read Blogs
       </a>
 
-      <a href="compare.html"
-        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-        Compare Two Json
-      </a>
+      <!-- Format Button -->
       <button id="format-btn"
-        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
           <line x1="21" y1="10" x2="3" y2="10"></line>
@@ -90,8 +107,10 @@
         </svg>
         Format
       </button>
+
+      <!-- Clear Button -->
       <button id="clear-btn"
-        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
           <polyline points="3 6 5 6 21 6"></polyline>
@@ -99,9 +118,10 @@
         </svg>
         Clear
       </button>
+
     </div>
-    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Valid JSON">
-    </div>
+
+    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500"></div>
   </header>
 
   <!-- Main Content -->
@@ -181,13 +201,16 @@
           </p>
           <ul class="mt-4 list-inside list-disc space-y-2">
             <li><strong>Developers:</strong> Debug API responses with our <strong>JSON web editor</strong> and
-              <strong>JSON schema validator</strong> instead of drowning in console logs.</li>
+              <strong>JSON schema validator</strong> instead of drowning in console logs.
+            </li>
             <li><strong>QA Testers:</strong> Verify <strong>JSON data</strong> structures between test runs using our
-              <strong>JSON schema validation</strong> and <strong>JSON free editor</strong>.</li>
+              <strong>JSON schema validation</strong> and <strong>JSON free editor</strong>.
+            </li>
             <li><strong>Students:</strong> Learn by breaking, fixing, and re-formatting JSON with our <strong>quick JSON
                 editor</strong> and <strong>JSON decoder</strong>.</li>
             <li><strong>Anyone:</strong> If you’ve ever yelled “Why isn’t this working?!” at JSON, you belong here. Our
-              <strong>JSON online check</strong> makes errors obvious.</li>
+              <strong>JSON online check</strong> makes errors obvious.
+            </li>
           </ul>
         </div>
 
@@ -233,10 +256,26 @@
     </div>
   </section>
   <footer class="text-center p-4 mt-8 text-gray-600">
-      © 2025 JSON Junction. All Rights Reserved.
-      <a href="/privacy.html" style="color:#45a049;">Privacy Policy</a>
+    © 2025 JSON Junction. All Rights Reserved.
+    <a href="/privacy.html" style="color:#45a049;">Privacy Policy</a>
   </footer>
 
+  <script>
+    // Dropdown Toggle
+    const btn = document.getElementById("toolsDropdownBtn");
+    const menu = document.getElementById("toolsDropdownMenu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add("hidden");
+      }
+    });
+  </script>
   <script src="script.js"></script>
 
 

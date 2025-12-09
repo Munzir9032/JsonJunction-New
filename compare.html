@@ -41,37 +41,80 @@
 
 <body>
   <!-- Header -->
-  <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md" style="background-color: #45a049;">
-    <h1 class="text-xl font-bold text-white">JSON Junction</h1>
-    
-    <div class="flex items-center space-x-3">
-       <a id="compare-btn" href="blog.html" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md hover:bg-gray-100" aria-label="Compare JSON documents">
+  <header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 p-3 backdrop-blur-md"
+    style="background-color: #45a049;">
+
+    <!-- Left side: Title -->
+    <h1 class="text-xl font-bold text-white">
+      JSON Junction
+    </h1>
+
+    <div class="flex items-center space-x-4">
+
+      <div class="relative">
+        <button id="toolsDropdownBtn"
+          class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-700 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500">
+          Tools
+          <svg class="ml-2 h-4 w-4 transition-transform" id="toolsArrow"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+
+        <div id="toolsDropdownMenu"
+          class="hidden absolute right-0 mt-2 w-48 rounded-md bg-white shadow-lg border border-gray-200">
+
+          <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            Format or Veiw JSON
+          </a>
+
+          <a href="tools/Json_to_csv/json-to-csv.html"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+            JSON to CSV 
+          </a>
+
+        </div>
+      </div>
+
+      <a href="blog.html"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <!-- Document Icon -->
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <line x1="10" y1="9" x2="8" y2="9"/>
+        </svg>
         Read Blogs
-       </a>
-      <button id="compare-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md hover:bg-gray-100" aria-label="Compare JSON documents">
+      </a>
+
+      <button id="compare-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-blue-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
         Compare
       </button>
 
-      <button id="clear-left-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md hover:bg-gray-100" aria-label="Clear left JSON editor">
+      <button id="clear-left-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500">
         Clear Left
       </button>
 
-      <button id="clear-right-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md hover:bg-gray-100" aria-label="Clear right JSON editor">
+      <button id="clear-right-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-red-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500">
         Clear Right
       </button>
 
-      <button id="swap-btn" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-700 shadow-md hover:bg-gray-100" aria-label="Swap left and right JSON editors">
+      <button id="swap-btn"
+        class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-700 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500">
         Swap
       </button>
-      <button>
-        <a href="index.html" class="flex items-center rounded-lg bg-white px-3 py-2 text-sm font-semibold text-green-600 shadow-md transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" aria-label="Go to JSON Formatter">
-          Formatter/Validate JSON
-        </a>
-    </button>
     </div>
 
-    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500" title="Ready" aria-live="polite"></div>
-  </header>
+    <div id="status-indicator" class="hidden h-4 w-4 rounded-full bg-green-500"></div>
+</header>
+
 
   <!-- Main -->
   <main class="flex h-[70vh] overflow-hidden p-4 gap-4">
@@ -196,6 +239,25 @@
       © 2025 JSON Junction. All Rights Reserved.
       <a href="/privacy.html" style="color:#45a049;">Privacy Policy</a>
   </footer>
+
+
+  <script>
+  const toolsBtn = document.getElementById("toolsDropdownBtn");
+  const toolsMenu = document.getElementById("toolsDropdownMenu");
+  const toolsArrow = document.getElementById("toolsArrow");
+
+  toolsBtn.addEventListener("click", () => {
+    toolsMenu.classList.toggle("hidden");
+    toolsArrow.classList.toggle("rotate-180");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!toolsBtn.contains(e.target)) {
+      toolsMenu.classList.add("hidden");
+      toolsArrow.classList.remove("rotate-180");
+    }
+  });
+</script>
 
   
 

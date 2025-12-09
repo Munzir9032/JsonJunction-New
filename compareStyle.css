@@ -1,5 +1,10 @@
 /* --- Diff highlight styles for Ace editor lines --- */
 
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f3f4f6;
+}
+
 .ace_line_diff_added {
   position: absolute !important;
   background-color: rgba(16, 185, 129, 0.25) !important; /* green tint */
@@ -17,5 +22,10 @@
 
 .ace_line_error {
   position: absolute !important;
-  background-color: rgba(220, 38, 38, 0.3) !important; /* red tint for syntax errors */
+  background-color: rgba(
+    220,
+    38,
+    38,
+    0.3
+  ) !important; /* red tint for syntax errors */
 }
