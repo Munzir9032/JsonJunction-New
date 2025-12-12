@@ -48,90 +48,84 @@
 
         <article class="prose prose-lg max-w-none">
 
-            <p>
-                Comparing two JSON files is a common task for developers working with APIs,
-                databases, configuration files, or version control. When both files look similar,
-                finding differences manually becomes time-consuming and frustrating.
-            </p>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">What is a JSON Comparison Tool?</h2>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">What Is a JSON Comparison Tool?</h2>
+    <p>
+        When you're working with two different versions of the same JSON file, spotting what changed can be surprisingly tricky. A JSON comparison tool helps by checking both objects side-by-side and showing exactly where they differ. Instead of scanning line by line, the tool points out the details for you.
+    </p>
 
-            <p>
-                A JSON comparison tool automatically checks two JSON objects and highlights:
-            </p>
+    <ul class="list-disc ml-6">
+        <li>Key differences between objects</li>
+        <li>Changes in values</li>
+        <li>Fields that were added or removed</li>
+        <li>Updates in structure</li>
+        <li>Variations inside nested objects or arrays</li>
+    </ul>
 
-            <ul class="list-disc ml-6">
-                <li>Differences in keys</li>
-                <li>Differences in values</li>
-                <li>Missing or extra fields</li>
-                <li>Structural changes</li>
-                <li>Nested object variations</li>
-            </ul>
+    <p>
+        This kind of tool is useful when API responses shift, configuration files evolve, or when you simply want to understand what changed between two datasets.
+    </p>
 
-            <p>
-                This helps developers quickly identify what changed between two API responses
-                or configuration files.
-            </p>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">Why Compare JSON Files?</h2>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">Why Compare JSON Files?</h2>
+    <ul class="list-disc ml-6">
+        <li>Debugging backend API responses</li>
+        <li>Checking differences between software releases</li>
+        <li>Validating dynamic or unpredictable JSON structures</li>
+        <li>Finding unexpected behavior or broken data</li>
+        <li>Reviewing updates in configuration files</li>
+    </ul>
 
-            <ul class="list-disc ml-6">
-                <li>Debugging backend API responses</li>
-                <li>Checking changes between versions</li>
-                <li>Validating dynamic JSON structures</li>
-                <li>Spotting unexpected data issues</li>
-                <li>Reviewing configuration updates</li>
-            </ul>
+    <p>
+        Comparing JSON manually works for small objects, but once things get nested or lengthy, a tool becomes the only practical option.
+    </p>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">How to Compare JSON Using JSON Junction</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">How to Compare JSON Using JSON Junction</h2>
 
-            <ol class="list-decimal ml-6">
-                <li>Open the <a href="/compare.html" class="text-green-600">JSON Compare Tool</a>.</li>
-                <li>Paste the first JSON into the left editor.</li>
-                <li>Paste the second JSON into the right editor.</li>
-                <li>Click <strong>Compare</strong>.</li>
-                <li>Differences will be highlighted instantly with color markers.</li>
-                <li>In the middle box, you will see the no. of lines added, removed and changed.</li>
-                <li>Scroll a little, you will see the detailed difference between your json1 and json2.</li>
-            </ol>
+    <ol class="list-decimal ml-6">
+        <li>Open the JSON Compare Tool on JSON Junction.</li>
+        <li>Paste your first JSON file into the left editor.</li>
+        <li>Paste the second JSON file into the right editor.</li>
+        <li>Click the <strong>Compare</strong> button.</li>
+        <li>Color markers will highlight additions, removals, and modified values.</li>
+        <li>The center panel will show how many lines changed between the two versions.</li>
+        <li>Scrolling further will reveal a detailed breakdown of every difference.</li>
+    </ol>
 
-            <p>
-                The tool automatically aligns both JSON structures and visually marks differences,
-                making it easy to understand even for large nested objects.
-            </p>
+    <p>
+        The tool automatically lines up both JSON structures and highlights differences visually, which makes it easier to work with complex or deeply nested data.
+    </p>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">Example</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">Example</h2>
 
-            <p>Here are two sample JSON objects:</p>
+    <p>
+        Below is a simplified example showing how two JSON objects might differ:
+    </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+{
     "name": "Munzir",
     "role": "Developer",
     "active": true
-}</pre>
+}
 
-<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+{
     "name": "Munzir",
     "role": "Developer",
     "active": false,
     "experience": 3
-}</pre>
+}
+    </pre>
 
-            </div>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
+
+    <p>
+        Comparing JSON by hand can easily lead to mistakes, especially when you're dealing with long or nested structures. JSON Junction simplifies the entire process by showing changes instantly and clearly. Whether you're debugging an API, reviewing configuration updates, or analyzing versioned data, the comparison tool helps you work faster and with more confidence.
+    </p>
+
+</article>
 
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
-
-            <p>
-                Manually comparing JSON is slow and error‑prone. JSON Junction provides a fast,
-                accurate, and user‑friendly tool to compare JSON files instantly. Whether you're
-                debugging, testing APIs, or reviewing versioned data, this tool makes your workflow
-                smoother and faster.
-            </p>
-
-        </article>
 
         <hr class="my-8" />
 

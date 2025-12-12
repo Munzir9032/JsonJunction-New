@@ -46,110 +46,135 @@
 
         <article class="prose prose-lg max-w-none">
 
-            <p>
-                JSON is simple—but small mistakes can break your entire API, UI component, or application.
-                Here are the most common JSON errors developers run into and how to fix them in seconds.
-            </p>
+    <p>
+        JSON looks simple at first, but even one tiny mistake can crash an API response, break a frontend component, or make your whole application behave unexpectedly. Below are some of the most common JSON mistakes developers bump into, along with quick fixes that save time and frustration.
+    </p>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">1. Missing or Extra Commas</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">1. Missing or Extra Commas</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p><strong>Common Issue:</strong> Forgetting a comma between fields—usually after editing in a hurry.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir"
     "role": "Developer"
 }</pre>
 
-            <p><strong>Fix:</strong> Add a comma between key-value pairs.</p>
+    <p><strong>Fix:</strong> Add a comma between each key-value pair.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "role": "Developer"
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">2. Using Single Quotes Instead of Double Quotes</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">2. Using Single Quotes Instead of Double Quotes</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        JSON is strict about using double quotes. Developers coming from JavaScript sometimes forget this.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     'name': 'Munzir',
     'active': true
 }</pre>
 
-            <p><strong>Fix:</strong> JSON requires double quotes.</p>
+    <p><strong>Fix:</strong> Replace all single quotes with double quotes.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "active": true
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">3. Trailing Commas</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">3. Trailing Commas</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        Trailing commas work in JavaScript, but JSON doesn’t allow them at all.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "skills": ["Java", "MERN",],
 }</pre>
 
-            <p><strong>Fix:</strong> Remove trailing commas.</p>
+    <p><strong>Fix:</strong> Remove the comma at the end of the list or object.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "skills": ["Java", "MERN"]
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">4. Unescaped Characters</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">4. Unescaped Characters</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        Quotes inside strings must be escaped, or JSON will break immediately.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "bio": "I love coding in "Java""
 }</pre>
 
-            <p><strong>Fix:</strong> Escape quotes using <code>\"</code>.</p>
+    <p><strong>Fix:</strong> Escape inner quotes using <code>\"</code>.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "bio": "I love coding in \"Java\""
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">5. Keys Without Quotes</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">5. Keys Without Quotes</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        Developers often assume JSON behaves like JavaScript objects—but JSON keys must always be in quotes.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     name: "Munzir",
     role: "Developer"
 }</pre>
 
-            <p><strong>Fix:</strong> Always wrap keys in quotes.</p>
+    <p><strong>Fix:</strong> Wrap all keys in double quotes.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "role": "Developer"
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">6. Wrong Bracket or Brace</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">6. Wrong Bracket or Brace</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        A missing bracket is one of the hardest errors to spot in large JSON files.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "skills": ["Salesforce", "Java"
 }</pre>
 
-            <p><strong>Fix:</strong> Close arrays and objects properly.</p>
+    <p><strong>Fix:</strong> Ensure every <code>[</code> has a <code>]</code> and every <code>{</code> has a <code>}</code>.</p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "skills": ["Salesforce", "Java"]
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">7. Duplicate Keys</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">7. Duplicate Keys</h2>
 
-            <p><strong>Error Example:</strong></p>
+    <p>
+        JSON doesn’t support duplicate keys—only the last one will be used, which can lead to hidden bugs.
+    </p>
+
 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "name": "Nabeel"
 }</pre>
 
-            <p><strong>Fix:</strong> Remove the duplicate and keep one key.</p>
+    <p><strong>Fix:</strong> Keep only one unique key.</p>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
+    <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
 
-            <p>
-                JSON errors are extremely common, but most of them are easy to fix once you know where to look.
-                Using tools like JSON Junction's <a href="/" class="text-green-600">Formatter</a> and
-                <a href="/compare.html" class="text-green-600">Comparator</a> can help you instantly
-                identify and correct JSON issues.
-            </p>
-        </article>
+    <p>
+        Most JSON errors are small but easy to overlook, especially when working quickly. Catching these issues early saves hours of debugging time. Tools like JSON Junction’s 
+        <a href="/" class="text-green-600">Formatter</a> and 
+        <a href="/compare.html" class="text-green-600">Comparator</a> make it much easier to spot and correct mistakes instantly.
+    </p>
+
+</article>
+
 
         <hr class="my-8" />
 
