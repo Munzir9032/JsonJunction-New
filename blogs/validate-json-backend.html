@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How to Validate JSON on Backend (Node, Java, Python) – JSON Junction</title>
+
+  <meta name="description"
+    content="A beginner-friendly guide to validating JSON on the backend using Node.js, Java, and Python with clear explanations and examples." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+<header class="bg-green-600 shadow p-4 flex justify-between items-center">
+  <a href="/" class="text-2xl font-bold text-white">JSON Junction</a>
+</header>
+
+<main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded-xl shadow">
+
+<h1 class="text-3xl font-bold text-green-600 mb-4">
+  How to Validate JSON on Backend (Node, Java, Python)
+</h1>
+
+<hr class="my-6" />
+
+<article class="prose prose-lg max-w-none">
+
+<p>
+  When building APIs, your backend receives JSON data from users, mobile apps,
+  or other services. You should <strong>never trust this data blindly</strong>.
+  Invalid or unexpected JSON can crash your app, corrupt data, or even introduce
+  security issues.
+</p>
+
+<p>
+  <strong>JSON validation</strong> means checking whether incoming data:
+</p>
+
+<ul>
+  <li>Has the required fields</li>
+  <li>Uses the correct data types</li>
+  <li>Follows expected formats (email, numbers, etc.)</li>
+</ul>
+
+<p>
+  Validation should always happen <strong>before business logic</strong>.
+  If the data is invalid, your code should stop immediately and return an error.
+</p>
+
+<hr />
+
+<h2>Node.js: Validating JSON with Ajv</h2>
+
+<p>
+  In Node.js, one of the most popular libraries for JSON validation is
+  <strong>Ajv</strong>. It validates JSON using a JSON Schema.
+</p>
+
+<p><strong>Step 1: Define a schema</strong></p>
+
+<pre>
+const schema = {
+  type: "object",
+  required: ["email"],
+  properties: {
+    email: { type: "string", format: "email" }
+  }
+};
+</pre>
+
+<p><strong>Step 2: Validate incoming data</strong></p>
+
+<pre>
+const Ajv = require("ajv");
+const ajv = new Ajv();
+
+const valid = ajv.validate(schema, data);
+
+if (!valid) {
+  console.log(ajv.errors);
+  // return HTTP 400 (Bad Request)
+}
+</pre>
+
+<p>
+  If the JSON does not match the schema, Ajv provides clear error messages.
+  Your API should reject the request instead of continuing.
+</p>
+
+<hr />
+
+<h2>Java: Validating JSON with Bean Validation</h2>
+
+<p>
+  In Java (especially with Spring Boot), validation is usually done using
+  <strong>Bean Validation</strong> annotations.
+</p>
+
+<p><strong>Step 1: Define a request model</strong></p>
+
+<pre>
+public class UserRequest {
+
+  @NotNull
+  @Email
+  private String email;
+
+  // getters and setters
+}
+</pre>
+
+<p><strong>Step 2: Enable validation in controller</strong></p>
+
+<pre>
+@PostMapping("/users")
+public ResponseEntity<?> createUser(
+  @Valid @RequestBody UserRequest request
+) {
+  // business logic runs ONLY if validation passes
+}
+</pre>
+
+<p>
+  If the JSON is missing the email or the email is invalid,
+  Spring automatically returns a validation error response.
+</p>
+
+<hr />
+
+<h2>Python: Validating JSON with jsonschema</h2>
+
+<p>
+  In Python, the <strong>jsonschema</strong> library is commonly used
+  to validate JSON data against a schema.
+</p>
+
+<p><strong>Step 1: Define a schema</strong></p>
+
+<pre>
+schema = {
+  "type": "object",
+  "required": ["email"],
+  "properties": {
+    "email": { "type": "string", "format": "email" }
+  }
+}
+</pre>
+
+<p><strong>Step 2: Validate data safely</strong></p>
+
+<pre>
+from jsonschema import validate, ValidationError
+
+try:
+    validate(instance=data, schema=schema)
+except ValidationError as e:
+    print(e.message)
+    # return HTTP 400 (Bad Request)
+</pre>
+
+<p>
+  If validation fails, an exception is raised. You should catch it
+  and return a proper error response instead of crashing the app.
+</p>
+
+<hr />
+
+<h2>Final Rule to Remember</h2>
+
+<p>
+  <strong>Validation should always happen before business logic.</strong>
+</p>
+
+<p>
+  If invalid data enters your application, no amount of clean code later
+  can fully protect you. Validate early, fail fast, and keep your backend safe.
+</p>
+
+</article>
+
+</main>
+
+<footer class="mt-8 border-t border-gray-200 bg-gray-50 p-6 text-center text-gray-600">
+  <p class="mb-2">
+    © 2025 <strong>JSON Junction</strong>. All Rights Reserved.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-4 text-sm">
+    <a href="/privacy.html" class="hover:text-green-600 transition">Privacy Policy</a>
+    <span class="text-gray-400">|</span>
+    <a href="/websitePages/about.html" class="hover:text-green-600 transition">About Us</a>
+    <span class="text-gray-400">|</span>
+    <a href="/websitePages/contact.html" class="hover:text-green-600 transition">Contact Us</a>
+    <span class="text-gray-400">|</span>
+    <a href="/websitePages/terms.html" class="hover:text-green-600 transition">Terms & Conditions</a>
+  </div>
+</footer>
+
+</body>
+</html>
