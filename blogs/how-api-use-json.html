@@ -1,99 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2K6MHSB2X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-E2K6MHSB2X');
+  </script>
 
-        gtag('config', 'G-E2K6MHSB2X');
-    </script>
-
-    <!-- for google ads site verification -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8880408078901808"
     crossorigin="anonymous"></script>
 
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How APIs Use JSON (with Real Examples) – JSON Junction</title>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Learn how APIs use JSON to send and receive data between servers and clients, with simple real-world examples explained for beginners." />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SEO -->
+  <title>How APIs Use JSON (with Real Examples) – JSON Junction</title>
+  <meta name="description"
+    content="Learn how APIs use JSON to send and receive data between servers and clients, with simple real-world examples explained for beginners." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://jsonjunction.tech/blogs/how-api-use-json.html" />
+
+  <!-- Open Graph (no image for now – OK) -->
+  <meta property="og:title" content="How APIs Use JSON (with Real Examples) – JSON Junction">
+  <meta property="og:description"
+    content="Understand how APIs use JSON to exchange data, explained with clear and beginner-friendly real-world examples.">
+  <meta property="og:url" content="https://jsonjunction.tech/blogs/how-api-use-json.html">
+  <meta property="og:type" content="article">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Navbar -->
-    <header class="bg-green-600 shadow p-4 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold text-white">JSON Junction</a>
-        <nav class="space-x-4">
-            <a href="/" class="font-medium text-gray-700 text-white">Home</a>
-            <a href="/compare.html" class="font-medium text-gray-700 text-white">Compare JSON</a>
-            <a href="/blog/index.html" class="font-medium text-gray-700 text-white">Blog</a>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <header class="bg-green-600 shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-white">
+      <a href="/index.html" class=" font-bold text-white">JSON Junction</a>
+    </h1>
+    <nav class="space-x-4">
+      <a href="/" class="font-medium text-gray-700 text-white">Home</a>
+      <a href="/compare.html" class="font-medium text-gray-700 text-white">Compare JSON</a>
+      <a href="/blog/index.html" class="font-medium text-gray-700 text-white">Blog</a>
+    </nav>
+  </header>
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded-xl shadow">
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-white mt-8 rounded-xl shadow">
 
-        <h1 class="text-3xl font-bold mb-4 text-green-600">How APIs Use JSON (with Real Examples)</h1>
+    <h1 class="text-3xl font-bold mb-4 text-green-600">How APIs Use JSON (with Real Examples)</h1>
 
-        <p class="text-gray-500 mb-6">
-            Published on: <strong>January 2025</strong> • 
-            Category: <span class="text-green-600">APIs & JSON</span>
-        </p>
-
-        <hr class="my-6" />
-
-        <article class="prose prose-lg max-w-none">
-
-    <p>
-        Have you ever wondered how an app updates your weather forecast instantly or how social media loads new posts the moment you open it? Behind these smooth interactions are <strong>APIs</strong>, and almost every modern API relies on <strong>JSON</strong> to exchange data quickly and cleanly between systems.
+    <p class="text-gray-500 mb-6">
+      Published on: <strong>January 2025</strong> •
+      Category: <span class="text-green-600">APIs & JSON</span>
     </p>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">What Is an API?</h2>
+    <hr class="my-6" />
 
-    <p>
-        API stands for <strong>Application Programming Interface</strong>. You can think of it as a messenger that lets two different pieces of software communicate with each other. When an app sends a request or asks for information, the API processes it and responds—most often using <strong>JSON</strong> as the format for the data.
-    </p>
+    <article class="prose prose-lg max-w-none">
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">Why APIs Prefer JSON</h2>
+      <p>
+        Have you ever wondered how an app updates your weather forecast instantly or how social media loads new posts
+        the moment you open it? Behind these smooth interactions are <strong>APIs</strong>, and almost every modern API
+        relies on <strong>JSON</strong> to exchange data quickly and cleanly between systems.
+      </p>
 
-    <ul class="list-disc ml-6">
+      <h2 class="text-2xl font-semibold mt-5 mb-3">What Is an API?</h2>
+
+      <p>
+        API stands for <strong>Application Programming Interface</strong>. You can think of it as a messenger that lets
+        two different pieces of software communicate with each other. When an app sends a request or asks for
+        information, the API processes it and responds—most often using <strong>JSON</strong> as the format for the
+        data.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-5 mb-3">Why APIs Prefer JSON</h2>
+
+      <ul class="list-disc ml-6">
         <li><strong>Lightweight:</strong> JSON is short and quick to transfer over the internet.</li>
         <li><strong>Easy to understand:</strong> Its structure is simple and clean for humans to read.</li>
         <li><strong>Language-friendly:</strong> Almost every programming language can parse JSON easily.</li>
         <li><strong>Simple parsing:</strong> Frameworks and libraries handle JSON out of the box.</li>
         <li><strong>Industry standard:</strong> Most REST APIs use JSON as their default format.</li>
-    </ul>
+      </ul>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">Example: JSON in an API Response</h2>
+      <h2 class="text-2xl font-semibold mt-5 mb-3">Example: JSON in an API Response</h2>
 
-    <p>Here’s what a typical JSON response from an API might look like:</p>
+      <p>Here’s what a typical JSON response from an API might look like:</p>
 
-<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+      <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "id": 101,
     "name": "Munzir",
     "email": "munzir@example.com",
     "active": true
 }</pre>
 
-    <p>
-        This could be the result of calling an endpoint such as  
-        <code>https://api.example.com/users/101</code>.  
+      <p>
+        This could be the result of calling an endpoint such as
+        <code>https://api.example.com/users/101</code>.
         Your app receives this JSON, reads the values, and displays them to the user.
-    </p>
+      </p>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">How JSON Is Used in API Requests</h2>
+      <h2 class="text-2xl font-semibold mt-5 mb-3">How JSON Is Used in API Requests</h2>
 
-    <p>
-        JSON is not only used for responses—you also use it when sending data to an API.  
+      <p>
+        JSON is not only used for responses—you also use it when sending data to an API.
         Here’s an example of a simple POST request containing JSON:
-    </p>
+      </p>
 
-<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">POST https://api.example.com/users
+      <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">POST https://api.example.com/users
 Content-Type: application/json
 
 {
@@ -102,77 +125,83 @@ Content-Type: application/json
     "active": true
 }</pre>
 
-    <p>
-        The server reads this JSON and uses it to create or update data. This approach is far cleaner than older formats like XML and is now the standard for most modern apps.
-    </p>
+      <p>
+        The server reads this JSON and uses it to create or update data. This approach is far cleaner than older formats
+        like XML and is now the standard for most modern apps.
+      </p>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">Common Places You’ll See JSON in APIs</h2>
+      <h2 class="text-2xl font-semibold mt-5 mb-3">Common Places You’ll See JSON in APIs</h2>
 
-    <ul class="list-disc ml-6">
+      <ul class="list-disc ml-6">
         <li><strong>Weather APIs:</strong> Forecasts, temperature, wind speed, and conditions</li>
         <li><strong>Social apps:</strong> Posts, likes, comments, profiles</li>
         <li><strong>E-commerce sites:</strong> Product details, pricing, stock status</li>
         <li><strong>Financial systems:</strong> Currency rates, transactions, market data</li>
-    </ul>
+      </ul>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">Example: A Real API Workflow</h2>
+      <h2 class="text-2xl font-semibold mt-5 mb-3">Example: A Real API Workflow</h2>
 
-    <p>Here’s a simple breakdown of how an API interaction works:</p>
+      <p>Here’s a simple breakdown of how an API interaction works:</p>
 
-    <ol class="list-decimal ml-6">
+      <ol class="list-decimal ml-6">
         <li>Your application sends a <strong>GET</strong> request to an API.</li>
         <li>The server processes the request and replies with <strong>JSON</strong>.</li>
         <li>Your app reads the JSON and displays the information to the user.</li>
-    </ol>
+      </ol>
 
-    <p>
+      <p>
         For example, a call to <code>https://api.weather.com/current</code> might return:
-    </p>
+      </p>
 
-<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+      <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "city": "Delhi",
     "temperature": 29,
     "unit": "C",
     "condition": "Sunny"
 }</pre>
 
-    <p>
-        Your frontend can then turn this into a friendly sentence such as:  
+      <p>
+        Your frontend can then turn this into a friendly sentence such as:
         <em>“It’s 29°C and sunny in Delhi.”</em>
-    </p>
+      </p>
 
-    <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
+      <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
 
-    <p>
-        JSON plays a key role in how modern applications communicate. It keeps data exchange simple, structured, and efficient across servers, browsers, and mobile apps. If you plan to work with APIs or backend development, learning JSON is one of the most useful skills you can build early on.
-    </p>
+      <p>
+        JSON plays a key role in how modern applications communicate. It keeps data exchange simple, structured, and
+        efficient across servers, browsers, and mobile apps. If you plan to work with APIs or backend development,
+        learning JSON is one of the most useful skills you can build early on.
+      </p>
 
-    <p>
-        Tools like JSON Junction’s <a href="/" class="text-green-600">Formatter</a> and 
-        <a href="/compare.html" class="text-green-600">Comparator</a> make it easy to clean, inspect, and compare JSON whenever you need to.
-    </p>
+      <p>
+        Tools like JSON Junction’s <a href="/" class="text-green-600">Formatter</a> and
+        <a href="/compare.html" class="text-green-600">Comparator</a> make it easy to clean, inspect, and compare JSON
+        whenever you need to.
+      </p>
 
-</article>
+    </article>
 
-<div class="mt-10">
-  <h3 class="text-lg font-semibold text-green-600 mb-2">
-    Related Articles
-  </h3>
-  <ul class="list-disc ml-6">
-    <li><a href="/blogs/json-best-practices-production.html" class="text-green-600">JSON Best Practices for Production APIs</a></li>
-    <li><a href="/blogs/json-api-security-mistakes.html" class="text-green-600">Common JSON API Security Mistakes</a></li>
-  </ul>
-</div>
+    <div class="mt-10">
+      <h3 class="text-lg font-semibold text-green-600 mb-2">
+        Related Articles
+      </h3>
+      <ul class="list-disc ml-6">
+        <li><a href="/blogs/json-best-practices-production.html" class="text-green-600">JSON Best Practices for
+            Production APIs</a></li>
+        <li><a href="/blogs/common-json-api-security-mistakes.html" class="text-green-600">Common JSON API Security
+            Mistakes</a></li>
+      </ul>
+    </div>
 
 
 
-        <hr class="my-8" />
+    <hr class="my-8" />
 
-        <a href="/blog.html" class="text-green-600 font-semibold">← Back to Blog</a>
+    <a href="/blog.html" class="text-green-600 font-semibold">← Back to Blog</a>
 
-    </main>
+  </main>
 
-     <footer class="mt-8 border-t border-gray-200 bg-gray-50 p-6 text-center text-gray-600">
+  <footer class="mt-8 border-t border-gray-200 bg-gray-50 p-6 text-center text-gray-600">
     <p class="mb-2">
       © 2025 <strong>JSON Junction</strong>. All Rights Reserved.
     </p>
@@ -197,4 +226,5 @@ Content-Type: application/json
   </footer>
 
 </body>
+
 </html>
