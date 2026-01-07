@@ -291,9 +291,14 @@
       editorRight.setValue("{}", -1)
     );
     $("swap-btn").addEventListener("click", () => {
-      const a = editorLeft.getValue();
-      editorLeft.setValue(editorRight.getValue(), -1);
-      editorRight.setValue(a, -1);
+      try {
+        console.log('inside the swap btn>>');
+        const a = editorLeft.getValue();
+        editorLeft.setValue(editorRight.getValue(), -1);
+        editorRight.setValue(a, -1);
+      } catch (error) {
+        console.log('error during swap>>', error);
+      }
     });
 
     let timer;
