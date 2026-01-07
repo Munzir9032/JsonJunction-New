@@ -1,71 +1,110 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Home -->
-  <url>
-    <loc>https://jsonjunction.tech/</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Compare Tool -->
-  <url>
-    <loc>https://jsonjunction.tech/compare.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Blog Index -->
-  <url>
-    <loc>https://jsonjunction.tech/blog.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Blog Articles -->
-  <url>
-    <loc>https://jsonjunction.tech/blogs/how-to-format-json.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jsonjunction.tech/blogs/how-to-compare-two-json.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jsonjunction.tech/blogs/top-json-errors.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://jsonjunction.tech/blogs/what-is-json.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://jsonjunction.tech/blogs/how-api-use-json.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://jsonjunction.tech/blogs/json-vs-xml.html</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <script src="chrome-extension://lgecefcjlholabgliikbfdifhdfbfnma/frame_ant/frame_ant.js"/>
+    <url>
+        <loc>https://jsonjunction.tech/</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/index.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/compare.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/tools/Json_to_csv/json-to-csv.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blog.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/privacy.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/websitePages/about.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/websitePages/contact.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/websitePages/terms.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/how-to-format-json.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/how-to-compare-two-json.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/top-json-errors.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/what-is-json.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/how-api-use-json.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/json-vs-xml.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/mastering-json.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/optimizing-json-api-performance.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/common-json-api-security-mistakes.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/rest-vs-graphql-json-performance.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/validate-json-backend.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://jsonjunction.tech/blogs/json-best-practices-production.html</loc>
+        <lastmod>2026-01-07T09:49:21+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
 </urlset>
