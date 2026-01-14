@@ -65,21 +65,29 @@
         <article class="prose prose-lg max-w-none">
 
             <p>
-                JSON looks simple at first, but even one tiny mistake can crash an API response, break a frontend
-                component, or make your whole application behave unexpectedly. Below are some of the most common JSON
-                mistakes developers bump into, along with quick fixes that save time and frustration.
+                JSON seems easy enough when you first look at it, but it takes just one tiny mistake to break your whole
+                app. You miss a comma, and suddenly your API stops responding. Or maybe your frontend blows up with a
+                weird error. Data serialization is what holds the whole web together, so even a small “syntax fracture”
+                can bring everything crashing down. Here’s a rundown of the most common JSON mistakes developers make,
+                plus quick fixes to keep your code running smoothly.
             </p>
 
             <h2 class="text-2xl font-semibold mt-5 mb-3">1. Missing or Extra Commas</h2>
 
-            <p><strong>Common Issue:</strong> Forgetting a comma between fields—usually after editing in a hurry.</p>
+            <p>
+                This one’s classic: You’re moving fast, editing or reordering keys, and you forget a comma between
+                fields. JSON parsers rely on commas to know where one key-value pair ends and the next begins. Add an
+                extra comma where it doesn’t belong—say, before the first key—and you’ll hit a wall.
+            </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir"
     "role": "Developer"
 }</pre>
 
-            <p><strong>Fix:</strong> Add a comma between each key-value pair.</p>
+            <p><strong>The Fix:</strong> Just drop a comma between each pair.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
@@ -89,15 +97,19 @@
             <h2 class="text-2xl font-semibold mt-5 mb-3">2. Using Single Quotes Instead of Double Quotes</h2>
 
             <p>
-                JSON is strict about using double quotes. Developers coming from JavaScript sometimes forget this.
+                JSON is stricter than JavaScript. In JS, you can use single quotes, double quotes, or backticks. Not so
+                in JSON. The standard says you have to use double quotes for strings and property names. If you’re used
+                to writing JS all day, this trips you up fast.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     'name': 'Munzir',
     'active': true
 }</pre>
 
-            <p><strong>Fix:</strong> Replace all single quotes with double quotes.</p>
+            <p><strong>The Fix:</strong> Swap all the single quotes for double quotes.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
@@ -107,15 +119,19 @@
             <h2 class="text-2xl font-semibold mt-5 mb-3">3. Trailing Commas</h2>
 
             <p>
-                Trailing commas work in JavaScript, but JSON doesn’t allow them at all.
+                In JavaScript, you can leave a trailing comma, especially in arrays or objects, and it’s no big deal. It
+                even helps with cleaner diffs in version control. But JSON doesn’t play along. A trailing comma makes
+                the parser think there’s more data coming, and when it doesn’t find any, it throws an error.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "skills": ["Java", "MERN",],
 }</pre>
 
-            <p><strong>Fix:</strong> Remove the comma at the end of the list or object.</p>
+            <p><strong>The Fix:</strong> Kill that last comma.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
@@ -125,14 +141,18 @@
             <h2 class="text-2xl font-semibold mt-5 mb-3">4. Unescaped Characters</h2>
 
             <p>
-                Quotes inside strings must be escaped, or JSON will break immediately.
+                JSON strings have to live inside double quotes. If your string contains another double quote—maybe in a
+                quote, a title, or something from user input—the parser thinks you ended the string early. This usually
+                happens when you’re handling data from users or old databases.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "bio": "I love coding in "Java""
 }</pre>
 
-            <p><strong>Fix:</strong> Escape inner quotes using <code>\"</code>.</p>
+            <p><strong>The Fix:</strong> Escape those inside quotes with a backslash.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "bio": "I love coding in \"Java\""
@@ -141,33 +161,40 @@
             <h2 class="text-2xl font-semibold mt-5 mb-3">5. Keys Without Quotes</h2>
 
             <p>
-                Developers often assume JSON behaves like JavaScript objects—but JSON keys must always be in quotes.
+                JavaScript lets you skip quotes around object keys (unless they have spaces or special stuff). Not JSON.
+                In JSON, all keys must have double quotes. No exceptions.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     name: "Munzir",
     role: "Developer"
 }</pre>
 
-            <p><strong>Fix:</strong> Wrap all keys in double quotes.</p>
+            <p><strong>The Fix:</strong> Wrap every key in double quotes.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "role": "Developer"
 }</pre>
 
-            <h2 class="text-2xl font-semibold mt-5 mb-3">6. Wrong Bracket or Brace</h2>
+            <h2 class="text-2xl font-semibold mt-5 mb-3">6. Wrong Bracket or Brace (Mismatched Nesting)</h2>
 
             <p>
-                A missing bracket is one of the hardest errors to spot in large JSON files.
+                Missing a bracket or brace is a pain, especially in huge JSON files. It’s easy to lose track when you’re
+                copying and pasting or closing out big chunks of data. If you don’t match up your brackets and braces,
+                the parser gets lost.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "skills": ["Salesforce", "Java"
 }</pre>
 
-            <p><strong>Fix:</strong> Ensure every <code>[</code> has a <code>]</code> and every <code>{</code> has a
-                <code>}</code>.</p>
+            <p><strong>The Fix:</strong> Make sure every [ has a matching ] and every { has a matching }. Using a good
+                code editor that shows bracket matching helps a lot.</p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "skills": ["Salesforce", "Java"]
@@ -176,27 +203,97 @@
             <h2 class="text-2xl font-semibold mt-5 mb-3">7. Duplicate Keys</h2>
 
             <p>
-                JSON doesn’t support duplicate keys—only the last one will be used, which can lead to hidden bugs.
+                The JSON spec says keys should be unique in an object. Some parsers let it slide, but most will just
+                overwrite earlier values with the last one they find. This kind of “silent failure” makes debugging a
+                nightmare—your data just disappears.
             </p>
+
+            <p><strong>The Error:</strong></p>
 
             <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
     "name": "Munzir",
     "name": "Nabeel"
 }</pre>
 
-            <p><strong>Fix:</strong> Keep only one unique key.</p>
+            <p>
+                <strong>The Fix:</strong> Only use each key once. If you need multiple values, use an array instead:
+                "names": ["Munzir", "Nabeel"].
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">8. Invalid Data Types (Functions and Dates)</h2>
+
+            <p>
+                JSON only supports a handful of types: Strings, Numbers, Objects, Arrays, Booleans, and Null. You can’t
+                store JS functions, undefined, or native Date objects in JSON. If you try, it just won’t work—convert it
+                to a string or a number first.
+            </p>
+
+            <p><strong>The Error:</strong></p>
+
+            <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm">{
+    "timestamp": new Date(),
+    "callback": function() { alert('hello'); }
+}</pre>
+
+            <p>
+                Fix: Convert dates to ISO strings like "2023-10-27T..." and skip passing functions through JSON—just
+                don’t do it. If you need to trigger some logic on the other side, send an ID or a key instead.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">9. Numbers with Leading Zeros</h2>
+
+            <p>
+                Some programming languages see numbers like 0123 as octal, but JSON doesn’t play that game. It
+                straight-up bans leading zeros unless the number’s just 0 or something like 0.5. Try to send 05, and
+                almost every strict parser will reject it.
+            </p>
+
+            <p>
+                Fix: Don’t start integers with zero. Use 5 instead. If you absolutely need the zero (like for a postal
+                code), wrap it in quotes: "05".
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">10. Control Characters and Newlines</h2>
+
+            <p>
+                JSON strings can’t handle raw control characters—no straight-up newlines from hitting Enter, and no
+                tabs. You have to escape them using \n or \t. If you copy and paste a multi-line string into JSON
+                without escaping, the parser will complain as soon as it sees the first real line break.
+            </p>
+
+            <p>
+                Fix: Replace those raw line breaks with \n. Use a formatter to make sure your escaping is solid.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-5 mb-3">11. Encoding Issues (UTF-8)</h2>
+
+            <p>
+                JSON is supposed to be UTF-8. Still, when you’re copying data from weird editors or older systems,
+                invisible characters sometimes sneak in—things like Byte Order Marks or oddball spaces. You can’t see
+                them, but they’ll break your parser in a second.
+            </p>
+
+            <p>
+                Fix: Always save files as UTF-8, no BOM. Don’t trust default settings—double-check.
+            </p>
 
             <h2 class="text-2xl font-semibold mt-5 mb-3">Conclusion</h2>
 
             <p>
-                Most JSON errors are small but easy to overlook, especially when working quickly. Catching these issues
-                early saves hours of debugging time. Tools like JSON Junction’s
-                <a href="/" class="text-green-600">Formatter</a> and
-                <a href="/compare.html" class="text-green-600">Comparator</a> make it much easier to spot and correct
-                mistakes instantly.
+                Most JSON mistakes are tiny and easy to miss, especially when you’re rushing. Spotting them early saves
+                you hours of pain later, staring at “Unexpected token” errors in your console. JSON is the backbone of
+                data exchange, so keeping it clean is key if you want your app to stay stable.
+            </p>
+
+            <p>
+                Honestly, tools like JSON Junction’s Formatter and Comparator make life way easier. They help you catch
+                mistakes right away before they ever hit production. When your data keeps getting more complex, having a
+                dependable formatting and validation routine is your best shot at avoiding broken apps and lost data.
+                Good developers put as much care into their JSON as their code—they know every comma and quote matters.
             </p>
 
         </article>
+
 
         <div class="mt-10">
             <h3 class="text-lg font-semibold text-green-600 mb-2">
